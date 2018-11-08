@@ -1,0 +1,106 @@
+\documentclass[12pt, a4paper, twoside]{article}
+\usepackage{pgf,tikz,pgfplots}
+%\usepackage[margin=1cm]{geometry}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage[russian]{babel}
+
+\usepackage{lipsum}
+\pagestyle{empty}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+			    backgroundcolor=\color{white},   % Цвет фона
+			    basicstyle=\scriptsize\ttfamily, % Црифт для кода
+			    breaklines=true,                 % Автоматический перенос
+			    frame=single,	                 % Рамка вокруг кода
+			    keywordstyle=\color{blue},       % Стил для ключевых слов
+			    language=Python,                 % Язык программирования
+			    morekeywords={*,...},            % Добавление кл.сл. вручную
+			    numbers=left,                    % Расположение нумерации
+			    numbersep=5pt,                   % Отступ до нумерации
+			    numberstyle=\tiny\sffamily\color{gray}, % Стиль нумерации
+			    stringstyle=\color{red},         % Стиль строковых символов
+			    tabsize=4,	                     % Размер табуляции
+			}
+
+
+\usepackage{fancyhdr} %загрузим пакет
+\pagestyle{fancy} %применим колонтитул
+\fancyhf{} %очистим хидер на всякий случай
+\fancyhead[LE,RO]{\thepage} %номер страницы слева сверху на четных и справа на нечетных
+\fancyhead[CO]{\leftmark}
+\fancyhead[LO]{\rightmark} 
+\fancyhead[CE]{текст-центр-четные} 
+
+\usepackage[]{algorithm2e}
+
+
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm} % Расстояние между колонками
+			\setlength{\columnseprule}{1pt} % Толщина линии
+			\def\columnseprulecolor{\color{blue}} % Цвет линии
+
+
+
+
+
+
+\begin{document}
+\section{Раздел}
+\subsection{Подраздел}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-17.28,-5.87) rectangle (3.92,7.83);
+\draw [line width=2pt,color=wrwrwr] (-10.98,-0.11)-- (-7.08,0.97);
+\draw [line width=0.4pt,color=wrwrwr] (-7.08,0.97)-- (-8.34,5.45);
+\draw [line width=0.4pt,color=wrwrwr] (-8.34,5.45)-- (-10.98,-0.11);
+\begin{scriptsize}
+\draw [fill=rvwvcq] (-8.34,5.45) circle (1.5pt);
+\draw[color=rvwvcq] (-8.18,5.8) node {$A$};
+\draw [fill=rvwvcq] (-7.08,0.97) circle (2.5pt);
+\draw[color=rvwvcq] (-6.92,1.4) node {$B$};
+\draw [fill=rvwvcq] (-10.98,-0.11) circle (1pt);
+\draw[color=rvwvcq] (-11.32,0.22) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\begin{lstlisting}
+#include<iostream>
+			
+int main() {
+	std::cout << "Hello" << std::endl;
+}
+\end{lstlisting}
+\newpage
+\lstinputlisting[language=Python]{python/fourier.py}
+\newpage
+\begin{multicols}{3}
+	\lipsum[1-3]
+\end{multicols}
+\newpage
+\begin{algorithm}[H]
+ 			    \KwData{Входные данные}
+ 			    \KwResult{Результат}
+ 			    initialization\;
+ 			    \While{Нет результата}{
+  			        БОТАТЬ!\;
+  			        \eIf{Заботал}{
+  			            Отдохни\;
+  			        }{
+  			            БОТАЙ!\;
+  			        }
+  			    }
+			    \caption{Как жить на физтехе}
+			\end{algorithm}
+
+\end{document}
